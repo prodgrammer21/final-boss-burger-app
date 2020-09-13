@@ -33,7 +33,7 @@ const useProductsService = () => {
 
   return {
     create: createProduct,
-    retrive: retrieveProduct,
+    retrieve: retrieveProduct,
     update: updateProduct,
     delete: deleteProduct,
   };

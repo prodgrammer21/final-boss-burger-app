@@ -5,7 +5,12 @@ const path = require("path");
 /* Services */
 const useProductsService = require("./backend/services/Products");
 
-const { create, retrive, update, delete } = useProductsService();
+const {
+  create,
+  retrieve,
+  update,
+  delete: deleteProduct,
+} = useProductsService();
 
 const app = express();
 
