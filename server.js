@@ -2,6 +2,9 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 
+/* DB */
+const createTables = require("./backend/db/Tables");
+
 /* Services */
 const useProductsService = require("./backend/services/Products");
 
@@ -33,5 +36,7 @@ const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, async () => {
   console.log(`Listening on port: ${PORT}`);
+  await createTables();
+  await create();
   await retrieve();
 });

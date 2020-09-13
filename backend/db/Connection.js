@@ -7,7 +7,7 @@ const pool = mysql.createPool({
   database: "heroku_24fe9c09a6dc6ce",
 });
 
-const DBConnection = (query) => {
+module.exports = (query) => {
   return new Promise((resolve, reject) => {
     pool.getConnection((err, db) => {
       if (err) {
@@ -28,5 +28,3 @@ const DBConnection = (query) => {
     });
   });
 };
-
-module.exports = DBConnection;
