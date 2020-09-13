@@ -43,5 +43,5 @@ app.listen(PORT, async () => {
   await create({ name: "New Product", price: 200 });
   await update({ id: 11, name: "Edited Product", price: 300 });
   await deleteProduct(21);
-  console.log("RESULTS: ", await retrieve);
+  console.log("RESULTS: ", await retrieve());
 });
