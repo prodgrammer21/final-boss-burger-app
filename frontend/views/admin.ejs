@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Admin Page</title>
+    <%- include('./partials/header.ejs') %>
+  </head>
+  <body>
+    <div class="main">
+      <%- include('./partials/navbar.ejs') %>
+
+      <div class="admin-main">
+        <div class="form">
+          <h1>Create Product</h1>
+          <input type="text" id="cName" placeholder="Enter product name" />
+          <input type="number" id="cPrice" placeholder="Enter product price" />
+          <button id="createProduct">Create</button>
+        </div>
+        <div class="form">
+          <h1>Update Product</h1>
+          <input type="text" id="uId" placeholder="Enter product id" />
+          <input type="text" id="uName" placeholder="Enter new product name" />
+          <input
+            type="number"
+            id="uPrice"
+            placeholder="Enter new product price"
+          />
+          <button id="updateProduct">Update</button>
+        </div>
+        <div class="form">
+          <h1>Delete Product</h1>
+          <input type="number" id="dId" placeholder="Enter product id" />
+          <button id="deleteProduct">Delete</button>
+        </div>
+      </div>
+
+      <%- include('./partials/footer.ejs') %>
+    </div>
+    <script type="text/javascript" src="/static/js/api.js"></script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+.admin-main {
+  display: flex;
+  justify-content: space-around;
+}
+
+.admin-main .form {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-main .form input {
+  margin: 10px 0;
+  height: 40px;
+  color: #000;
+}
+
+.admin-main .form button {
+  height: 40px;
+  margin-top: 10px;
+  color: #000;
+  font-weight: 800;
+}

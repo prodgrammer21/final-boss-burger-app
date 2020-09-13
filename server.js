@@ -5,16 +5,6 @@ const path = require("path");
 /* DB */
 const createTables = require("./backend/db/Tables");
 
-/* Services */
-const useProductsService = require("./backend/services/Products");
-
-const {
-  create,
-  retrieve,
-  update,
-  delete: deleteProduct,
-} = useProductsService();
-
 const app = express();
 
 /* Frontend */
@@ -28,24 +18,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 /* Routes */
-// const appRoute = require("./backend/routes/App");
+const productsRoute = require("./backend/routes/Products");
+const adminRoute = require("./backend/routes/Admin");
 
-// app.use("/", appRoute);
+app.use("/", productsRoute);
+app.use("/", adminRoute);
 
 const PORT = process.env.PORT || 8080;
-
-const DBConnection = require("./backend/db/Connection");
 
 app.listen(PORT, async () => {
   console.log(`Listening on port: ${PORT}`);
 
   /* TABLE CREATION */
   await createTables();
-
-  await DBConnection("TRUNCATE TABLE products");
-  console.log("RESULTS: ", await retrieve());
-
-  // await create({ name: "New Product", price: 200 });
-  // await update({ id: 11, name: "Edited Product", price: 300 });
-  // await deleteProduct(21);
 });

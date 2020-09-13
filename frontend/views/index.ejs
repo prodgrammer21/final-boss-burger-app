@@ -25,11 +25,12 @@
       <div class="products-section" id="products">
         <h2>START YOUR <span>ORDER TODAY</span></h2>
         <div class="products-list">
+          <% for (let product of products) { %>
           <div class="product">
             <div class="hover-details">
               <div class="price-container">
-                <p>Classic <span>Burger</span></p>
-                <p>PHP 45.00</p>
+                <p><%= product.name %> <span>Burger</span></p>
+                <p>PHP <%= product.price %></p>
               </div>
               <div class="image-container">
                 <img
@@ -45,10 +46,10 @@
                   alt="product classic burger"
                 />
               </div>
-              <p>Classic <span>Burger</span></p>
+              <p><%= product.name %> <span>Burger</span></p>
             </div>
             <div class="price-container">
-              <p>PHP 45.00</p>
+              <p>PHP <%= product.price %></p>
               <div class="image-container">
                 <img
                   src="/static/assets/images/products-cart-icon.png"
@@ -57,166 +58,7 @@
               </div>
             </div>
           </div>
-          <div class="product">
-            <div class="hover-details">
-              <div class="price-container">
-                <p>Classic <span>Burger</span></p>
-                <p>PHP 45.00</p>
-              </div>
-              <div class="image-container">
-                <img
-                  src="/static/assets/images/products-cart-icon.png"
-                  alt="product cart icon"
-                />
-              </div>
-            </div>
-            <div class="burger-container">
-              <div class="image-container">
-                <img
-                  src="/static/assets/images/products-classic-burger.png"
-                  alt="product classic burger"
-                />
-              </div>
-              <p>Classic <span>Burger</span></p>
-            </div>
-            <div class="price-container">
-              <p>PHP 45.00</p>
-              <div class="image-container">
-                <img
-                  src="/static/assets/images/products-cart-icon.png"
-                  alt="product cart icon"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <div class="hover-details">
-              <div class="price-container">
-                <p>BBQ <span>Burger</span></p>
-                <p>PHP 60.00</p>
-              </div>
-              <div class="image-container">
-                <img
-                  src="/static/assets/images/products-cart-icon.png"
-                  alt="product cart icon"
-                />
-              </div>
-            </div>
-            <div class="burger-container">
-              <div class="image-container">
-                <img
-                  src="/static/assets/images/products-bbq-burger.png"
-                  alt="product bbq burger"
-                />
-              </div>
-              <p>BBQ <span>Burger</span></p>
-            </div>
-            <div class="price-container">
-              <p>PHP 60.00</p>
-              <div class="image-container">
-                <img
-                  src="/static/assets/images/products-cart-icon.png"
-                  alt="product cart icon"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <div class="hover-details">
-              <div class="price-container">
-                <p>Crispy <span>Burger</span></p>
-                <p>PHP 50.00</p>
-              </div>
-              <div class="image-container">
-                <img
-                  src="/static/assets/images/products-cart-icon.png"
-                  alt="product cart icon"
-                />
-              </div>
-            </div>
-            <div class="burger-container">
-              <div class="image-container">
-                <img
-                  src="/static/assets/images/products-crispy-burger.png"
-                  alt="product crispy burger"
-                />
-              </div>
-              <p>Crispy <span>Burger</span></p>
-            </div>
-            <div class="price-container">
-              <p>PHP 50.00</p>
-              <div class="image-container">
-                <img
-                  src="/static/assets/images/products-cart-icon.png"
-                  alt="product cart icon"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <div class="hover-details">
-              <div class="price-container">
-                <p>Flame Grilled <span>Burger</span></p>
-                <p>PHP 60.00</p>
-              </div>
-              <div class="image-container">
-                <img
-                  src="/static/assets/images/products-cart-icon.png"
-                  alt="product cart icon"
-                />
-              </div>
-            </div>
-            <div class="burger-container">
-              <div class="image-container">
-                <img
-                  src="/static/assets/images/products-flame-grilled-burger.png"
-                  alt="product flame grilled burger"
-                />
-              </div>
-              <p>Flame Grilled <span>Burger</span></p>
-            </div>
-            <div class="price-container">
-              <p>PHP 60.00</p>
-              <div class="image-container">
-                <img
-                  src="/static/assets/images/products-cart-icon.png"
-                  alt="product cart icon"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <div class="hover-details">
-              <div class="price-container">
-                <p>Grilled <span>Burger</span></p>
-                <p>PHP 40.00</p>
-              </div>
-              <div class="image-container">
-                <img
-                  src="/static/assets/images/products-cart-icon.png"
-                  alt="product cart icon"
-                />
-              </div>
-            </div>
-            <div class="burger-container">
-              <div class="image-container">
-                <img
-                  src="/static/assets/images/products-grilled-burger.png"
-                  alt="product flame grilled burger"
-                />
-              </div>
-              <p>Grilled <span>Burger</span></p>
-            </div>
-            <div class="price-container">
-              <p>PHP 40.00</p>
-              <div class="image-container">
-                <img
-                  src="/static/assets/images/products-cart-icon.png"
-                  alt="product grilled icon"
-                />
-              </div>
-            </div>
-          </div>
+          <% } %>
         </div>
       </div>
       <div class="contacts-section" id="contacts">
