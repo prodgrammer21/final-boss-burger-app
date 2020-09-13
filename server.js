@@ -29,11 +29,11 @@ const pool = mysql.createPool({
   database: "heroku_24fe9c09a6dc6ce",
 });
 
-pool.query("SELECT 1 + 1 AS solution", function (error, results, fields) {
-  if (error) throw error;
-  console.log("The solution is: ", results[0].solution);
-});
-
 app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);
+
+  pool.query("SELECT 1 + 1 AS solution", function (error, results, fields) {
+    if (error) throw error;
+    console.log("The solution is: ", results[0].solution);
+  });
 });
