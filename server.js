@@ -34,14 +34,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const PORT = process.env.PORT || 8080;
 
+const DBConnection = require("./backend/db/Connection");
+
 app.listen(PORT, async () => {
   console.log(`Listening on port: ${PORT}`);
 
   /* TABLE CREATION */
   await createTables();
 
-  await create({ name: "New Product", price: 200 });
-  await update({ id: 11, name: "Edited Product", price: 300 });
-  await deleteProduct(21);
+  await DBConnection("TRUNCATE TABLE products");
   console.log("RESULTS: ", await retrieve());
+
+  // await create({ name: "New Product", price: 200 });
+  // await update({ id: 11, name: "Edited Product", price: 300 });
+  // await deleteProduct(21);
 });
