@@ -25,9 +25,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 /* Routes */
-const appRoute = require("./backend/routes/App");
+// const appRoute = require("./backend/routes/App");
 
-app.use("/", appRoute);
+// app.use("/", appRoute);
 
 const PORT = process.env.PORT || 8080;
 
