@@ -36,7 +36,12 @@ const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, async () => {
   console.log(`Listening on port: ${PORT}`);
+
+  /* TABLE CREATION */
   await createTables();
-  const productsResult = await retrieve();
-  console.log("productsResult: ", productsResult);
+
+  await create({ name: "New Product", price: 200 });
+  await update({ id: 11, name: "Edited Product", price: 300 });
+  await deleteProduct(21);
+  console.log("RESULTS: ", await retrieve);
 });

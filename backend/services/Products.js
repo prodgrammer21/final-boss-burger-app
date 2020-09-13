@@ -1,18 +1,20 @@
 const DBConnection = require("../db/Connection");
 
 const useProductsService = () => {
-  const createProduct = async () => {
-    try {
-      const query =
-        "INSERT INTO products(name, price) VALUES ('Product 1', 100)";
-      const results = await DBConnection(query);
+  const createProduct = async (createObj) => {
+    const { name, price } = createObj;
 
-      return results;
+    try {
+      const query = `INSERT INTO products VALUES (null, '${name}', ${price})`;
+      await DBConnection(query);
+
+      return true;
     } catch (err) {
       console.log("Error createProduct: ", err);
       return false;
     }
   };
+
   const retrieveProduct = async () => {
     try {
       const query = "SELECT * FROM products";
@@ -21,14 +23,32 @@ const useProductsService = () => {
       return results;
     } catch (err) {
       console.log("Error retrieveProduct: ", err);
+      return [];
+    }
+  };
+  const updateProduct = async (updateObj) => {
+    const { id, name, price } = updateObj;
+
+    try {
+      const query = `UPDATE products SET name='${name}', price=${price} WHERE id = ${id}`;
+      await DBConnection(query);
+
+      return true;
+    } catch (err) {
+      console.log("Error updateProduct: ", err);
       return false;
     }
   };
-  const updateProduct = async () => {
-    return;
-  };
-  const deleteProduct = async () => {
-    return;
+  const deleteProduct = async (id) => {
+    try {
+      const query = `DELETE FROM products WHERE id = ${id}`;
+      await DBConnection(query);
+
+      return true;
+    } catch (err) {
+      console.log("Error updateProduct: ", err);
+      return false;
+    }
   };
 
   return {
